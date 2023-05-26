@@ -28,7 +28,10 @@ git push -uf origin main
 ## Dockerfile
 ```
 # Dockerfile Build
-docker build . -t 3d-image:0.1
+docker build . -t visualize:allcmd
 # 실행 및 포트포워딩
-docker run --name kch-nginx -d -p 8080:80 3d-image:0.1
+- 환경변수를 각각 부여해 컨테이너 이미지 실행
+docker run -e START_ROW=1 -d -p 8086:80 visualize:allcmd
+docker run -e START_ROW=11 -d -p 8087:80 visualize:allcmd
+docker run -e START_ROW=21 -d -p 8088:80 visualize:allcmd
 ```
