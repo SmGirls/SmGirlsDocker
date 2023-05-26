@@ -1,6 +1,11 @@
 #!/bin/bash
 
+mkdir -p ./static/
 python3 ./visualize.py
-cp ./result.png /usr/share/nginx/html/
+chmod 600 ./result.png
+mv ./result.png ./static/
 
-nginx -g "daemon off;"
+export FLASK_APP=app
+export FLASK_RUN_HOST=0.0.0.0
+
+python3 -m flask run

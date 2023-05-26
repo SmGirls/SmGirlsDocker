@@ -120,7 +120,7 @@ for t in range(len(containers)):
     ax.set_ylim([0, truckY])
     ax.set_zlim([0, truckZ])
 
-    plt.show()
+    # plt.show()
     plt.savefig("result" + ".png")
 
 print(os.environ['START_ROW'])
